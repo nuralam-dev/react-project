@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light; /* এখানে শুধু light লিখে দিলে ডার্ক থিম আর আসবে না */
+}
