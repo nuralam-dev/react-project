@@ -1,31 +1,36 @@
-
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import SingleProducts from "./SingleProducts";
 
 function App() {
- 
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("./fakeData.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
+  console.log(products);
   return (
     <>
-     
+      <div className="main-container mx-auto p-8">
 
-     <h1>hello Bangladesh</h1>
-     <div className="card bg-base-100 w-96 shadow-sm">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div className="card-body">
-    <h2 className="card-title">Card Title</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
-</div>
+       <div>
+         {products.map((pd) => (
+          <SingleProducts></SingleProducts>
+        ))}
+       </div>
 
-      
+        <div className="flex justify-around mx-auto p-8">
+          
+        <div className="card-container text-3xl w-xs shadow-[4px_4px_8px_gray] p-4">
+          <h1>Add To card</h1>
+        </div>
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
