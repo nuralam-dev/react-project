@@ -14,19 +14,18 @@ function App() {
   console.log(products);
   return (
     <>
-      <div className="main-container mx-auto p-8">
-
-       <div>
-         {products.map((pd) => (
-          <SingleProducts></SingleProducts>
-        ))}
-       </div>
-
-        <div className="flex justify-around mx-auto p-8">
-          
-        <div className="card-container text-3xl w-xs shadow-[4px_4px_8px_gray] p-4">
-          <h1>Add To card</h1>
-        </div>
+      <div className="mx-auto p-8">
+        <div className="flex flex-1">
+          <div className="grid grid-cols-3 w-auto gap-3">
+            {products.map((pd) => (
+              <SingleProducts key={pd.id} product={pd} />
+            ))}
+          </div>
+          <div className="flex justify-around mx-auto p-8">
+            <div className="card-container text-3xl w-xs shadow-[4px_4px_8px_gray] p-4">
+              <h1>Add To card</h1>
+            </div>
+          </div>
         </div>
       </div>
     </>

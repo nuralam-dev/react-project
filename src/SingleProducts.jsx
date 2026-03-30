@@ -3,15 +3,15 @@ import React from 'react';
 const SingleProducts = () => {
     return (
         <div>
-           <div className="card bg-base-100 w-96 shadow-sm">
+           <div className="card gap-3 shadow-sm border border-amber-200 mb-3">
           <figure>
             <img
               src="https://i.ibb.co.com/8gvSWSdN/Custom-Navy-T-Shirts-Diadye.jpg"
               alt=""
             />
           </figure>
-          <div className="card-body">
-            <h2 className="card-title">Diadye</h2>
+          <div className="card-body ">
+            <h2 className="card-title text-2xl">Diadye</h2>
             <p>
               A card component has a figure, a body part, and inside body there
               are title and actions parts
