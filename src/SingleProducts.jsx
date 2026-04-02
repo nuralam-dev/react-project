@@ -1,24 +1,25 @@
 import React from 'react';
 
-const SingleProducts = () => {
+const SingleProducts = ({product,handleCard}) => {
+  
     return (
         <div>
            <div className="card gap-3 shadow-sm border border-amber-200 mb-3">
           <figure>
             <img
-              src="https://i.ibb.co.com/8gvSWSdN/Custom-Navy-T-Shirts-Diadye.jpg"
+              src={product.image}
               alt=""
             />
           </figure>
           <div className="card-body ">
-            <h2 className="card-title text-2xl">Diadye</h2>
-            <p>
-              A card component has a figure, a body part, and inside body there
-              are title and actions parts
+            <h2 className="card-title text-2xl">{product.title.slice(0,10)}</h2>
+            <p>{product.description.slice(0,100)}
+             
             </p>
             <div className="card-actions justify-end flex">
-              <p className="text-2xl">Price : 15$</p>
-              <button className="btn btn-primary">ADD TO CARD</button>
+              <p className="text-2xl">Price : {product.price}</p>
+              <button onClick={(e) =>handleCard(product)}
+              className="btn btn-primary">ADD TO CARD</button>
             </div>
           </div>
         </div> 
